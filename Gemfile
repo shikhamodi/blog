@@ -46,3 +46,4 @@ group :development do
 end
 gem 'pg'
 gem 'devise'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
