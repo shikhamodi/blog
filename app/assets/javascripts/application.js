@@ -15,3 +15,9 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-datepicker
+ $(function() {
+$( "#datepicker" ).datepicker({
+    minDate: 0
+ });
+});
