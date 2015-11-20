@@ -53,3 +53,4 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
 gem 'carrierwave'
 gem "mini_magick"
 gem 'tinymce-rails'
+gem 'friendly_id', '~> 5.1.0'
