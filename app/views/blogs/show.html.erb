@@ -1,0 +1,14 @@
+<div>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</div>
+<div>
+	<strong>Discription:</strong>
+	<%= @blog.discription %>
+</div>
+<div>
+	<strong>Image:</strong><br />
+ 	<%= image_tag @blog.image_url.to_s %>
+</div>
+<%= link_to "Back", blogs_path %>
+ 
