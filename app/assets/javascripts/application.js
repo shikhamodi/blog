@@ -16,8 +16,12 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-datepicker
- $(function() {
+//= require tinymce
+
+
+$(function() {
 $( "#datepicker" ).datepicker({
     minDate: 0
  });
 });
+ 
