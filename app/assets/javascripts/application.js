@@ -17,7 +17,7 @@
 //= require_tree .
 //= require bootstrap-datepicker
 //= require tinymce
-
+//= require bootstrap
 
 $(function() {
 $( "#datepicker" ).datepicker({
