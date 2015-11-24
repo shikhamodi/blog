@@ -1,23 +1,26 @@
-<div>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</div>
-<div>
-	<strong>Discription:</strong>
-	<%= @blog.discription %>
-</div>
-<div>
-	<strong>Image:</strong><br />
- 	<%= image_tag @blog.image_url.to_s %>
-</div>
-<div>
-	<strong>youtube_url:</strong><br /> 
-	<%= embed(@blog.youtube_url) rescue 0 %>
-</div>
-<div id="blog_comments">
-	<%= render 'comments/comment' %>
-</div>
-	
-<%= render "comments/form" %>
-<%= link_to "Back", blogs_path %>
- 
+<div class = "container">
+<section>
+  <div class="panel panel-primary">
+    <div class="panel-body">
+    	<div class="row invoice-list">
+        <div class="col-lg-4 col-sm-4">
+					<div class="col-lg-4 col-sm-4">
+						<strong>Title:</strong>
+						<%= @blog.title %>
+						<strong>Discription:</strong>
+						<%= @blog.discription %>
+						<strong>Image:</strong><br />
+						<%= image_tag @blog.image_url.to_s,:size => "180x180" %>
+						<strong>youtube_url:</strong><br /> 
+						<%= embed(@blog.youtube_url) rescue 0 %>
+						<div id="blog_comments">
+							<%= render 'comments/comment' %>
+						</div>
+						<%= render "comments/form" %>
+						<%= link_to "Back", blogs_path %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section> 

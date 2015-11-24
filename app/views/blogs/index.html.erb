@@ -10,10 +10,10 @@
     <tr>
   	<td><%= blog.title %></td>
   	<td><%= blog.discription %></td>
-    <td><%= link_to 'Show', blog_path(blog), class: 'btn btn-default' %>
+    <td><%= link_to 'Show', blog_path(blog), :class=> 'btn btn-success' %>
     </td>
-    <td><%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-default' %></td>
-    <td><%= link_to 'Delete', blog_path(blog), method: :delete,data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td> 
+    <td><%= link_to 'Edit', edit_blog_path(blog), :class => 'btn btn-info' %></td>
+    <td><%= link_to 'Delete', blog_path(blog), method: :delete,data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td> 
   </tr>
   <% end %>
   </table>
