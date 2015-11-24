@@ -1,12 +1,17 @@
 class CommentsController < ApplicationController
 	before_action :set_blog, only: [:index, :new, :show, :edit, :create, :update, :destroy]
-
+	 
 	def index
 		@comment = @blog.comments
 		respond_to do |format|
-      format.html 
-      format.js
-    end
+			if @comment.save
+				format.html {redirect_to blog_path(@blog)} 
+      	format.js {redirect_to blog_path(@blog)}
+   		else
+      	format.html { render :action => 'new' }
+      	format.js { render :action => 'new' }
+    	end
+		end
 	end
 
 	def new
@@ -21,12 +26,16 @@ class CommentsController < ApplicationController
 
 	def create
 		@comment = @blog.comments.build(comment_params)
-		if @comment.save
-			redirect_to blog_path(@blog)
-		else
-			render :new
+		respond_to do |format|
+			if @comment.save
+				format.html 
+      	format.js
+   		else
+      	format.html { render :action => 'new' }
+      	format.js { render :action => 'new' }
+    	end
 		end
-	end
+  end
 
 	def update
 		if @comment.update(comment_params)

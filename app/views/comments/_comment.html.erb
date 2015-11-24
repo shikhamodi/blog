@@ -1,0 +1,7 @@
+<% @blog.comments.each do |comment| %>
+	<div>
+		<span id="comment_<%= comment.id %>">
+			<%= comment.comment %>
+		</span> 
+	</div>
+<% end %>
