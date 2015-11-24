@@ -10,7 +10,12 @@
 						<strong>Discription:</strong>
 						<%= @blog.discription %>
 						<strong>Image:</strong><br />
-						<%= image_tag @blog.image_url.to_s,:size => "180x180" %>
+						<%#= image_tag @blog.image_url.to_s,:size => "180x180" %>
+						<% @post_attachments.each do |p| %>
+  						<%= image_tag p.avatar_url, :size => "180x180" %>
+  						<%= link_to 'New Post attachment', new_post_attachment_path %>
+  						<%= link_to "Update Image", edit_post_attachment_path(p) %>
+						<% end %>
 						<strong>youtube_url:</strong><br /> 
 						<%= embed(@blog.youtube_url) rescue 0 %>
 						<div id="blog_comments">

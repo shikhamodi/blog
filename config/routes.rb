@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :post_attachments
   root to: "home#index"
   devise_for :users
-
   resources :blogs do
     resources :comments
   end

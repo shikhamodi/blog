@@ -7,9 +7,11 @@ class BlogsController < ApplicationController
 
 	def new
 		@blog = Blog.new
+		@post_attachment = @blog.post_attachments.build
 	end
 
 	def show
+		@post_attachments = @blog.post_attachments.all
 	end
 
 	def edit
@@ -18,11 +20,14 @@ class BlogsController < ApplicationController
 	def create
 		@blog = Blog.new(blog_params)
 		if @blog.save
-			redirect_to blog_path(@blog)
-		else
-			render :new
-		end
-	end
+			params[:post_attachments]['avatar'].each do |a|
+          @post_attachment = @blog.post_attachments.create!(:avatar => a)
+      end
+       redirect_to blog_path(@blog)
+     else
+       render action: 'new'
+     end
+   end
 
 	def update
 		if @blog.update(blog_params)
@@ -39,7 +44,7 @@ class BlogsController < ApplicationController
 
 	private
 	def blog_params
-		params.require(:blog).permit(:title, :discription,:image, {avatars: []}, :youtube_url)
+		params.require(:blog).permit(:title, :discription,:image, {avatars: []}, :youtube_url,  post_attachments_attributes: [:id, :blog_id, :avatar])
 	end
 
 	def set_blog
