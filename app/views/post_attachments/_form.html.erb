@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(@post_attachment) do |f| %>
   <% if @post_attachment.errors.any? %>
     <div id="error_explanation">
@@ -13,6 +14,9 @@
   <div class="field">
     <%= f.label :image %><br>
     <%= f.file_field :avatar %>
+  </div>
+  <div>
+    <%= f.hidden_field :blog_id, :value => @blog %>
   </div>
   <div class="actions">
     <%= f.submit %>
