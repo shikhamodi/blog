@@ -1,0 +1,20 @@
+<div class="container">
+<h1 class="center-text">Playlist</h1>
+<%= link_to "add Video", new_playlist_path, :class => 'btn btn-danger' %>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  <% @playlists.each do |playlist| %>
+  <tr>
+  	<th><%= embed(playlist.link) %></th>
+  	<th>Title:<%= playlist.video_title %></th>
+  	<th>Author:<%= playlist.author %></th>
+  	<th>Likes:<%= playlist.likes %></th>
+  	<th>Dislikes:<%= playlist.dis_likes %></th>
+  	<th><%= link_to 'play', playlist_path(playlist), :class => 'btn btn-danger' %></th>
+  </tr>
+  <% end %>
+</table>
