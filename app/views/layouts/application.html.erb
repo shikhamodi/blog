@@ -13,11 +13,10 @@
 <nav class="navbar navbar-inverse">
   <div class="collection">
       <div class="navbar-header">
-      <a class="navbar-brand" href="#">BLogApp</a>
+      <a class="navbar-brand" >BLogApp</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
         <li>
         <% if user_signed_in? %>
         <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
@@ -26,6 +25,7 @@
         <%= link_to 'Sign up', new_user_registration_path %></li>
         <li><%= link_to 'Login', new_user_session_path %></li>
         </li>
+        <li class="active"><%= link_to 'New Blog', new_blog_path %></li>
         <% end %>
       </ul>
     </div>

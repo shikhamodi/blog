@@ -29,9 +29,10 @@
     <%= f.text_field :youtube_url, :class => 'form-group col-md-12' %>
   </div>
 
+
   <%= f.fields_for :post_attachments do |p| %>
      <div class="field">
-       <%= p.label :avatar %><br>
+       <%= p.label :Image %><br>
        <%= p.file_field :avatar, :multiple => true, name: "post_attachments[avatar][]" %>
      </div>
    <% end %>
